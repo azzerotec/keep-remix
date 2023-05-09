@@ -1,11 +1,4 @@
-import {
-  CaixaBranca,
-  Coluna,
-  Linha,
-  Container,
-  TitleContainer,
-  Text,
-} from "~/routes/_index";
+import { Coluna, Linha, Container } from "~/routes/_index";
 import bunner from "~/componets/Image/bunner.png";
 import { Feature } from "./Feature";
 
@@ -31,7 +24,7 @@ export const Introduction = () => {
           </Coluna>
         </Linha>
       </Container>
-      <Coluna>
+      <Coluna className="mb-56">
         <h2 className="mb-8 px-32 text-5xl font-bold tracking-tighter">
           Benefícios do Associa
         </h2>
