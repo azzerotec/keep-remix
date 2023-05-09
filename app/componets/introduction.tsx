@@ -7,6 +7,7 @@ import {
   Text,
 } from "~/routes/_index";
 import bunner from "~/componets/Image/bunner.png";
+import { Feature } from "./Feature";
 
 export const Introduction = () => {
   return (
@@ -35,33 +36,24 @@ export const Introduction = () => {
           Benefícios do Associa
         </h2>
         <Linha className="justify-between px-32">
-          <CaixaBranca>
-            <TitleContainer>Fácil</TitleContainer>
-            <Text>
-              Cadastro simplificado e fácil visualização das informações da sua
-              instituição
-            </Text>
-          </CaixaBranca>
-          <CaixaBranca>
-            <TitleContainer>Dados</TitleContainer>
-            <Text>
-              Cadastrar os serviços oferecidos aos associados e fácil manutenção
-            </Text>
-          </CaixaBranca>
-          <CaixaBranca>
-            <TitleContainer>Transparência</TitleContainer>
-            <Text>
-              Tenha acesso rápido as informações dos recursos que estão sendo
-              utilizados na associação
-            </Text>
-          </CaixaBranca>
-          <CaixaBranca>
-            <TitleContainer>Relatórios</TitleContainer>
-            <Text>
-              Relatórios de prestação de contas com dados confiáveis, chega de
-              papel. Digitalize tudo!
-            </Text>
-          </CaixaBranca>
+          <Feature
+            title="Fácil"
+            text="Cadastro simplificado e fácil visualização  das informações da sua instituição"
+          />
+          <Feature
+            title="Dados"
+            text="Cadastrar os serviços oferecidos aos associados e fácil manutenção"
+          />
+          <Feature
+            title="Transparência"
+            text="Tenha acesso rápido as informações dos recursos que estão sendo
+              utilizados na associação"
+          />
+          <Feature
+            title="Relatórios"
+            text="Relatórios de prestação de contas com dados confiáveis, chega de
+              papel. Digitalize tudo!"
+          />
         </Linha>
       </Coluna>
     </>
