@@ -9,8 +9,10 @@ export const TestDemo = () => {
           <strong>Gostou?</strong> Faça um teste da plataforma e verifique em
           contexto real o que ela pode fazer por você.
         </p>
-        <CaixaBranca className="border border-gray-500 p-16">
-          <h1>Sign up for a free account</h1>
+        <CaixaBranca className="items-start border border-gray-500 p-16">
+          <h1 className="mb-11 text-2xl font-bold">
+            Sign up for a free account
+          </h1>
           <Linha>
             <input type="text" placeholder="Frist Name" />
             <input type="text" placeholder="Last Name" />
