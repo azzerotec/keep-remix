@@ -39,9 +39,7 @@ export const CaixaBranca = ({
   children,
   className = "",
 }: PropsWithChildren<{ className?: string }>) => (
-  <Coluna className={`justify-center bg-white p-7 ${className}`}>
-    {children}
-  </Coluna>
+  <Coluna className={`bg-white ${className}`}>{children}</Coluna>
 );
 
 export const Text = ({ children }: PropsWithChildren) => (
