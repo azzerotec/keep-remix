@@ -52,8 +52,10 @@ export default function Login() {
           </Coluna>
         </Coluna>
         <Coluna className="bg-contain pl-7">
-          <img src={manchacolorida} alt="Ondas Coloridas" />
-          <img src={imageViolao} alt="Imagem De Violão" />
+          <Linha>
+            <img src={manchacolorida} alt="Ondas Coloridas" />
+            <img src={imageViolao} alt="Imagem De Violão" />
+          </Linha>
         </Coluna>
       </Linha>
     </main>
