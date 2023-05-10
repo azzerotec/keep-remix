@@ -7,7 +7,12 @@ export default {
       fontFamily: {
         primary: ["Poppins"],
       },
-      colors: { bg: "#1A1F79", fundo: "#F5F9F9", textdemo: "#99F0AC" },
+      colors: {
+        bg: "#1A1F79",
+        fundo: "#F5F9F9",
+        textdemo: "#99F0AC",
+        loginbutton: "#595CFF",
+      },
     },
   },
   plugins: [],

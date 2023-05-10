@@ -18,10 +18,10 @@ export const MainContent = () => {
             utilizados na associação.
           </Text>
         </Coluna>
-        <img src={sitebunner} alt="bunner site"></img>
+        <img src={sitebunner} alt="bunner site" />
       </Linha>
       <Linha>
-        <img src={bunnercriartema} alt="bunner tema"></img>
+        <img src={bunnercriartema} alt="bunner tema" />
         <Coluna>
           <SubTitle>Otimização dos serviços e cursos oferecidos</SubTitle>
           <Text>

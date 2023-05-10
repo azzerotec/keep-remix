@@ -5,7 +5,7 @@ type Props = {
   className?: string;
 };
 
-const TextInput = ({ placeholder, className }: Props) => (
+export const TextInput = ({ placeholder, className }: Props) => (
   <input
     type="text"
     placeholder={placeholder}
