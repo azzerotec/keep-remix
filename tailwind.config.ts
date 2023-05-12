@@ -12,6 +12,7 @@ export default {
         fundo: "#F5F9F9",
         textdemo: "#99F0AC",
         loginbutton: "#595CFF",
+        cinzaclaro: "#B3B3B3",
       },
     },
   },
