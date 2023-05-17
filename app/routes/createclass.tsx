@@ -5,17 +5,13 @@ import imgbateria from "~/componets/Image/imgbaterista.png";
 import { Lupinha } from "~/componets/Image/Icons/IcondeBusca";
 import { Pluscircle } from "~/componets/Image/Icons/iconpluscircle";
 import { Setinhas } from "~/componets/Image/Icons/iconUpDownArrow";
+import { UserNameAndLogo } from "~/componets/UserNameAndLogo";
 
 export default function createclass() {
   return (
     <main className="bg-fundo font-sans">
       <Coluna>
-        <Linha className="mb-2 w-full justify-between bg-white py-4 pl-28 ">
-          <Logo />
-          <p className="mr-20 border border-l-0 border-gray-100">
-            Nome do usuário
-          </p>
-        </Linha>
+        <UserNameAndLogo />
         <Linha>
           <Coluna className="mt-11 pl-28">
             <h1 className="mb-7 text-2xl font-bold">Criar Turma</h1>

@@ -1,7 +1,7 @@
 import { Coluna, Container, Linha, SubTitle, Text } from "~/routes/_index";
-import sitebunner from "~/componets/Image/Group665.png";
-import bunnercriartema from "~/componets/Image/Group666.png";
-import bunneracompanhamento from "~/componets/Image/Group667.png";
+import sitebunner from "~/componets/Image/modelconfigclass.png";
+import bunnercriartema from "~/componets/Image/modelcreateclass.png";
+import bunneracompanhamento from "~/componets/Image/modelaccompaniment.png";
 
 export const MainContent = () => {
   return (
