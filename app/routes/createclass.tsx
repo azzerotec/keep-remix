@@ -15,7 +15,7 @@ export default function createclass() {
         <Linha>
           <Coluna className="mt-11 pl-28">
             <h1 className="mb-7 text-2xl font-bold">Criar Turma</h1>
-            <CaixaBranca className="mr-28 px-8">
+            <CaixaBranca className="mb-11 mr-28 px-8">
               <Linha className="mt-7">
                 <h2 className="w-full text-base font-semibold">
                   Selecionar professor
@@ -29,11 +29,11 @@ export default function createclass() {
               </Linha>
               <p className="mt-2 text-xs text-cinzaclaro">32 Professores</p>
               <Linha className="mt-8 items-center">
-                <Linha className=" w-full  justify-between px-2">
+                <Linha className="h-11 w-80 justify-between px-2">
                   <text>Nome</text>
                   <Setinhas />
                 </Linha>
-                <Linha className="  px-2">
+                <Linha className="h-11 w-36 px-2">
                   <h2 className="mr-7">Categoria</h2>
                   <Setinhas />
                 </Linha>
@@ -48,6 +48,41 @@ export default function createclass() {
                 title={"Airton Pereira "}
                 city={"São José do Rio Preto"}
                 instrumento={"Clarinete"}
+              />
+              <StudentCategory
+                title={"Joaquim Barcelos da Costa"}
+                city={"Diadema"}
+                instrumento={"Clarinete"}
+              />
+              <StudentCategory
+                title={"Ramon Sanchez da Silva"}
+                city={"São Paulo"}
+                instrumento={"Trompete"}
+              />
+              <StudentCategory
+                title={"Mariana Cardoso"}
+                city={"Ribeirão Pires"}
+                instrumento={"Guitarra"}
+              />
+              <StudentCategory
+                title={"Gabriela Portanova"}
+                city={"São José do Rio Predo"}
+                instrumento={"Violino"}
+              />
+              <StudentCategory
+                title={"Karina Sunagawa"}
+                city={"Ribeirão Pires"}
+                instrumento={"Percussão"}
+              />
+              <StudentCategory
+                title={"Sebastião do Espírito Santo"}
+                city={"Diadema"}
+                instrumento={"Guitarra"}
+              />
+              <StudentCategory
+                title={"Coraline Swedezum"}
+                city={"Marília"}
+                instrumento={"Baixo"}
               />
             </CaixaBranca>
           </Coluna>
