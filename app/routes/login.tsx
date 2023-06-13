@@ -23,20 +23,20 @@ export default function Login() {
           </Coluna>
           <TextInput
             placeholder="E-mail"
-            className="-mx-2 flex w-full flex-row"
+            className="-ml-1 flex w-full flex-row"
           />
           <TextInput
             placeholder="Senha"
-            className="-mx-2 flex w-full flex-row"
+            className=" -ml-1 flex w-full flex-row"
           />
-          <Linha className="text-xs font-bold">
-            <input id="manterlogado" type="checkbox" />
-            <Linha className="justify-between">
+          <Linha className="justify-between text-xs font-bold">
+            <div>
+              <input id="manterlogado" type="checkbox" />
               <label htmlFor="manterlogado" className="ml-2">
                 Manter logado
               </label>
-              <a className="underline">Esqueci a Senha</a>
-            </Linha>
+            </div>
+            <a className="underline">Esqueci a Senha</a>
           </Linha>
           <Container>
             <Coluna>
