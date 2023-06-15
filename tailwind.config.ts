@@ -13,6 +13,7 @@ export default {
         textdemo: "#99F0AC",
         loginbutton: "#595CFF",
         cinzaclaro: "#B3B3B3",
+        azulClaro: "#595CFF",
       },
     },
   },
