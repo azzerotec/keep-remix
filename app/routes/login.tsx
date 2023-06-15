@@ -3,7 +3,6 @@ import { TextInput } from "~/componets/TestDemo";
 import { Coluna, Container } from "~/routes/_index";
 import { Linha } from "~/routes/_index";
 import imageViolao from "~/componets/Image/IMGViolao.png";
-import manchacolorida from "~/componets/Image/ManchaColorida.png";
 
 export default function Login() {
   return (
@@ -51,12 +50,8 @@ export default function Login() {
             </text>
           </Coluna>
         </Coluna>
-        <Coluna className="bg-contain pl-7">
-          <Linha>
-            <img src={manchacolorida} alt="Ondas Coloridas" />
-            <img src={imageViolao} alt="Imagem De Violão" />
-          </Linha>
-        </Coluna>
+
+        <img src={imageViolao} alt="Imagem De Violão" />
       </Linha>
     </main>
   );
