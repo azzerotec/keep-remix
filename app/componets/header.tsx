@@ -12,9 +12,12 @@ export const Header = () => {
           <a>Benefícios</a>
           <a>Preços</a>
           <a>Contato</a>
-          <button className="rounded-md bg-bg px-11 py-2 text-textdemo">
+          <a
+            href="/login"
+            className="rounded-md bg-bg px-11 py-2 text-textdemo"
+          >
             Demo
-          </button>
+          </a>
         </Linha>
       </Linha>
     </Coluna>
