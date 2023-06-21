@@ -4,6 +4,7 @@ import { Lupinha } from "~/componets/Image/Icons/IcondeBusca";
 import { DownloadIcon } from "~/componets/Image/Icons/icondownload";
 import { ClassCase } from "~/componets/ClassCase";
 import CircleCinza from "~/componets/Image/CircleCinza.jpg";
+import { Statisticsbox } from "~/componets/StatusClass";
 
 export default function Tracking() {
   return (
@@ -18,8 +19,7 @@ export default function Tracking() {
             <Linha>
               <img src={CircleCinza} alt="Fundo Cinza" className="px-3 py-7" />
               <Coluna className="py-7">
-                <p className="text-3xl font-bold">32</p>
-                <p className="text-sm text-cinzaclaro">Estudantes</p>
+                <Statisticsbox Statusnumber={"32"} Statusname={"Estudantes"} />
               </Coluna>
             </Linha>
           </CaixaBranca>
@@ -27,8 +27,7 @@ export default function Tracking() {
             <Linha>
               <img src={CircleCinza} alt="Fundo Cinza" className="px-3 py-7" />
               <Coluna className="py-7">
-                <p className="text-3xl font-bold">10</p>
-                <p className="text-sm text-cinzaclaro">Professores</p>
+                <Statisticsbox Statusnumber={"10"} Statusname={"Professor"} />
               </Coluna>
             </Linha>
           </CaixaBranca>
@@ -36,8 +35,7 @@ export default function Tracking() {
             <Linha>
               <img src={CircleCinza} alt="Fundo Cinza" className="px-3 py-7" />
               <Coluna className="py-7">
-                <p className="text-3xl font-bold">78%</p>
-                <p className="text-sm text-cinzaclaro">Frequência</p>
+                <Statisticsbox Statusnumber={"78%"} Statusname={"Frequência"} />
               </Coluna>
             </Linha>
           </CaixaBranca>
@@ -45,8 +43,10 @@ export default function Tracking() {
             <Linha>
               <img src={CircleCinza} alt="Fundo Cinza" className="px-3 py-7" />
               <Coluna className="py-7">
-                <p className="text-3xl font-bold">15%</p>
-                <p className="text-sm text-cinzaclaro">Desistentes</p>
+                <Statisticsbox
+                  Statusnumber={"15%"}
+                  Statusname={"Desistentes"}
+                />
               </Coluna>
             </Linha>
           </CaixaBranca>
@@ -54,8 +54,10 @@ export default function Tracking() {
             <Linha>
               <img src={CircleCinza} alt="Fundo Cinza" className="px-3 py-7" />
               <Coluna className="py-7">
-                <p className="text-3xl font-bold">56</p>
-                <p className="text-sm text-cinzaclaro">Instrumentos</p>
+                <Statisticsbox
+                  Statusnumber={"56"}
+                  Statusname={"Instrumentos"}
+                />
               </Coluna>
             </Linha>
           </CaixaBranca>
@@ -66,9 +68,11 @@ export default function Tracking() {
             <p className="text-cinzaclaro">Alunos</p>
             <p className="text-cinzaclaro">Professores</p>
             <Lupinha />
-            <button className="flex w-1/2 justify-end bg-azulClaro text-white">
-              Criar Nova Turma
-            </button>
+            <div className="flex w-1/2 justify-end">
+              <button className=" h-12 w-44 rounded-md bg-azulClaro text-white">
+                Criar Nova Turma
+              </button>
+            </div>
           </Linha>
           <Linha className="text-cinzaclaro">
             <ClassCase
