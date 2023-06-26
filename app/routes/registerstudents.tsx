@@ -5,6 +5,7 @@ import { DownloadIcon } from "~/componets/Image/Icons/icondownload";
 import { ClassCase } from "~/componets/ClassCase";
 import CircleCinza from "~/componets/Image/CircleCinza.jpg";
 import { Statisticsbox } from "~/componets/StatusClass";
+import { Setinhas } from "~/componets/Image/Icons/iconUpDownArrow";
 
 export default function RegistrerStudent() {
   return (
@@ -33,92 +34,16 @@ export default function RegistrerStudent() {
               </button>
             </div>
           </Linha>
-          <Linha className="text-cinzaclaro">
-            <ClassCase
-              NomedaTurma={"Nome da turma"}
-              Professor={"Professor"}
-              Alunos={"Alunos"}
-              Andamento={"Andamento"}
-              Finalização={"Finalização"}
-              Categoria={"Categoria"}
-            />
-          </Linha>
-          <Linha>
-            <ClassCase
-              NomedaTurma={"Turma do prof João"}
-              Professor={"Paulo de Oliveira dos Santos"}
-              Alunos={"Alunos img"}
-              Andamento={"Andamento"}
-              Finalização={"23/11/2021"}
-              Categoria={"Violão"}
-            />
-            <DownloadIcon />
-          </Linha>
-          <Linha>
-            <ClassCase
-              NomedaTurma={"Expressão corporal"}
-              Professor={"Airton Pereira"}
-              Alunos={"Alunos img"}
-              Andamento={"Andamento"}
-              Finalização={"03/05/2021"}
-              Categoria={"Violão"}
-            />
-            <DownloadIcon />
-          </Linha>
-          <Linha>
-            <ClassCase
-              NomedaTurma={"Violão"}
-              Professor={"Joaquim Barcelos da Costa"}
-              Alunos={"Alunos img"}
-              Andamento={"Andamento"}
-              Finalização={"15/08/2021"}
-              Categoria={"Violão"}
-            />
-            <DownloadIcon />
-          </Linha>
-          <Linha>
-            <ClassCase
-              NomedaTurma={"Dança"}
-              Professor={"Ramon Sanchez da Silva"}
-              Alunos={"Alunos img"}
-              Andamento={"Andamento"}
-              Finalização={"20/07/2021"}
-              Categoria={"Violão"}
-            />
-            <DownloadIcon />
-          </Linha>
-          <Linha>
-            <ClassCase
-              NomedaTurma={"Cordas orquestra"}
-              Professor={"Mariana Cardoso"}
-              Alunos={"Alunos img"}
-              Andamento={"Andamento"}
-              Finalização={"20/07/2021"}
-              Categoria={"Violão"}
-            />
-            <DownloadIcon />
-          </Linha>
-          <Linha>
-            <ClassCase
-              NomedaTurma={"Flauta"}
-              Professor={"Gabriela Portanova"}
-              Alunos={"Alunos img"}
-              Andamento={"Andamento"}
-              Finalização={"03/05/2021"}
-              Categoria={"Violão"}
-            />
-            <DownloadIcon />
-          </Linha>
-          <Linha>
-            <ClassCase
-              NomedaTurma={"Clarinete"}
-              Professor={"Karina Sunagawa"}
-              Alunos={"Alunos img"}
-              Andamento={"Andamento"}
-              Finalização={"15/08/2021"}
-              Categoria={"Violão"}
-            />
-            <DownloadIcon />
+          <Linha className="h-11 text-cinzaclaro">
+            <text>espaço branco</text>
+            <div className="w-72">
+              <text>aluno</text>
+              <Setinhas />
+            </div>
+            <text className="w-60">nome da turma</text>
+            <text className="w-60">local de residencia</text>
+            <text className="w-60">status</text>
+            <text className="w-28">finalização</text>
           </Linha>
         </CaixaBranca>
       </Coluna>
