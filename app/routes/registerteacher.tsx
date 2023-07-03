@@ -23,18 +23,18 @@ export default function RegistrerStudent() {
         <CaixaBranca className="mb-7 mt-14 px-10">
           <Linha className="my-14 justify-between py-2 pr-3">
             <h2 className=" text-cinzaclaro">Turmas em andamento</h2>
-            <p className="text-lg font-extrabold">Alunos</p>
-            <p className="text-cinzaclaro">Professores</p>
+            <p className="text-cinzaclaro">Alunos</p>
+            <p className="text-lg font-extrabold">Professores</p>
             <LupinhaCinza />
             <div className="flex w-1/2 justify-end">
               <button className=" h-12 w-44 rounded-md bg-azulClaro text-white">
-                Inserir Aluno
+                Inserir Professor
               </button>
             </div>
           </Linha>
           <Linha className=" border-b text-cinzaclaro">
             <text className="h-11 w-12 p-2"></text>
-            <Linha className="h-11 w-72 justify-between  p-2">
+            <Linha className="h-11 w-72 justify-between p-2">
               <text>Aluno</text>
               <div className="flex items-center">
                 <Setinhas />
