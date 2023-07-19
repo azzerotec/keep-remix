@@ -14,6 +14,7 @@ export default {
         loginbutton: "#595CFF",
         cinzaclaro: "#B3B3B3",
         azulClaro: "#595CFF",
+        Cor6F7482: "#6F7482",
       },
     },
   },
