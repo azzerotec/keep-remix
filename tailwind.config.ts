@@ -15,6 +15,7 @@ export default {
         cinzaclaro: "#B3B3B3",
         azulClaro: "#595CFF",
         Cor6F7482: "#6F7482",
+        CorA7A7A7: "#A7A7A7",
       },
     },
   },

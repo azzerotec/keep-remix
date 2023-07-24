@@ -6,6 +6,7 @@ import { MapsBook } from "~/componets/Image/Icons/maps-book";
 import { StatusFileCheck } from "~/componets/Image/Icons/status-file-check";
 import { TextInput } from "~/componets/TestDemo";
 import { ArrowRight } from "~/componets/Image/Icons/keyboard-arrow-right";
+import { UploadIcon } from "~/componets/Image/Icons/uploadIcon";
 
 export default function RegistrationStudant() {
   return (
@@ -82,11 +83,19 @@ export default function RegistrationStudant() {
 
       <TextInput placeholder="Text" />
 
-      <text>Upload Img</text>
+      <Linha className="border-spacing-3 rounded-md border-2 border-dashed border-azulClaro">
+        <div className="m-1 flex h-14 w-14 items-center justify-center rounded-md bg-azulClaro">
+          <UploadIcon />
+        </div>
+        <Coluna className="ml-4 mt-3">
+          <text className="text-base">Upload de documentos</text>
+          <text className="text-xs text-CorA7A7A7 ">Exemplo: RG.pdf</text>
+        </Coluna>
+      </Linha>
 
       <text>aparecer quando fizer Upload</text>
 
-      <Linha className="py-6">
+      <Linha className="border-y py-6">
         <MapsBook />
 
         <text className="ml-6 text-lg font-semibold ">Dados Demográficos</text>
@@ -95,7 +104,7 @@ export default function RegistrationStudant() {
         </div>
       </Linha>
 
-      <Linha className="flex py-6 align-middle">
+      <Linha className="flex border-y py-6 align-middle">
         <StatusFileCheck />
         <text className="ml-6 text-lg font-semibold">Dados Socieconômicos</text>
         <div className="ml-3">
