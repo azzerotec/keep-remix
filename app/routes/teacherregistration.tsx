@@ -9,7 +9,7 @@ import { ArrowRight } from "~/componets/Image/Icons/keyboard-arrow-right";
 import { UploadIcon } from "~/componets/Image/Icons/uploadIcon";
 import { CloseIconCircle } from "~/componets/Image/Icons/closeiconCirle";
 
-export default function RegistrationStudant() {
+export default function RegistrationTeacher() {
   return (
     <Coluna className="bg-fundo pl-36 pr-10">
       <Linha className="pt-8">
