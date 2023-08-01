@@ -13,22 +13,17 @@ export default function RegistrationTeacher() {
   return (
     <Coluna className="bg-fundo pl-36 pr-10">
       <Linha className="pt-8">
-        <text className="mt-4 text-2xl font-black">Cadastro de aluno</text>
+        <text className="mt-4 text-2xl font-black">Cadastro de Professor</text>
         <div className="pl-56">
           <CloseIcon />
         </div>
       </Linha>
+
       <Linha className="mt-10">
         <PolicitalBallot />
         <h2 className="ml-4 text-lg font-semibold">Dados Pessoais</h2>
         <div className="ml-3">
           <ArrowDown />
-        </div>
-        <div className="ml-44">
-          <MapsBook />
-        </div>
-        <div className="ml-5">
-          <StatusFileCheck />
         </div>
       </Linha>
 
@@ -41,11 +36,6 @@ export default function RegistrationTeacher() {
 
       <text className="mt-7 text-xs text-Cor6F7482">Nome Completo</text>
       <TextInput placeholder="Text" />
-
-      <text className="text-xs text-Cor6F7482">Número de Inscrição</text>
-
-      <TextInput placeholder="Text" />
-
       <Linha>
         <Coluna>
           <text className="text-xs text-Cor6F7482">Data de Nascimento</text>
@@ -58,7 +48,7 @@ export default function RegistrationTeacher() {
         </Coluna>
       </Linha>
 
-      <text className="text-xs text-Cor6F7482">Endereço Text</text>
+      <text className="text-xs text-Cor6F7482">Endereço</text>
 
       <TextInput placeholder="Text" />
 
@@ -77,12 +67,51 @@ export default function RegistrationTeacher() {
       </Linha>
 
       <text className="text-xs text-Cor6F7482">E-mail</text>
-
       <TextInput placeholder="Text" />
 
-      <text className="text-xs text-Cor6F7482">Nome dos responsáveis</text>
+      <Linha>
+        <Coluna>
+          <text className="text-xs text-Cor6F7482">Tipo sanguíneo</text>
+          <TextInput placeholder="Text" />
+        </Coluna>
 
+        <Coluna className="ml-4">
+          <text className="text-xs text-Cor6F7482">Estado civil</text>
+          <TextInput placeholder="Text" />
+        </Coluna>
+      </Linha>
+
+      <Linha>
+        <Coluna>
+          <text className="text-xs text-Cor6F7482">Escolaridade</text>
+          <TextInput placeholder="Text" />
+        </Coluna>
+
+        <Coluna className="ml-4">
+          <text className="text-xs text-Cor6F7482">Quantidade de filhos</text>
+          <TextInput placeholder="Text" />
+        </Coluna>
+      </Linha>
+
+      <text className="text-xs text-Cor6F7482">Área de formação</text>
       <TextInput placeholder="Text" />
+
+      <text className="text-xs text-Cor6F7482">Curriculum late</text>
+      <TextInput placeholder="Text" />
+
+      <text className="text-xs text-Cor6F7482">
+        Instrumentos que o professor ensina:
+      </text>
+      <TextInput placeholder="Text" />
+
+      <Linha className="mb-8 mt-3  text-white">
+        <Linha className=" mr-3 h-4  w-16  items-center justify-between rounded  bg-azulClaro">
+          <text className="ml-2">R.pdf</text>
+          <div className="mr-2">
+            <CloseIconCircle />
+          </div>
+        </Linha>
+      </Linha>
 
       <Linha className="border-spacing-3 rounded-md border-2 border-dashed border-azulClaro">
         <div className="m-1 flex h-14 w-14 items-center justify-center rounded-md bg-azulClaro">
