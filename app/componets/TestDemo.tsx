@@ -9,7 +9,7 @@ export const TextInput = ({ placeholder, className }: Props) => (
   <input
     type="text"
     placeholder={placeholder}
-    className={`mx-3 my-3 box-border rounded border border-gray-200 px-3 py-2 ${className}`}
+    className={`my-3 box-border rounded border border-gray-200 px-3 py-2 ${className}`}
   />
 );
 
@@ -27,12 +27,12 @@ export const TestDemo = () => {
             Sign up for a free account
           </h1>
           <Linha className="w-full">
-            <TextInput placeholder="Frist Name" className="w-full" />
-            <TextInput placeholder="Last Name" className="w-full" />
+            <TextInput placeholder="Frist Name" className="mx-3 w-full" />
+            <TextInput placeholder="Last Name" className="mx-3 w-full" />
           </Linha>
           <Coluna className="w-full">
-            <TextInput placeholder="Email Adress" />
-            <TextInput placeholder="Create Password" />
+            <TextInput placeholder="Email Adress" className="mx-3" />
+            <TextInput placeholder="Create Password" className="mx-3" />
           </Coluna>
 
           <button className="mx-3 mt-3 rounded-md bg-textdemo px-8 py-2 text-sm font-bold text-bg">

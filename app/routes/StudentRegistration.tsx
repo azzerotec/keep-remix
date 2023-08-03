@@ -1,44 +1,137 @@
 import { CloseIcon } from "~/componets/Image/Icons/closeicon";
 import { Coluna, Linha } from "./_index";
+import { PolicitalBallot } from "~/componets/Image/Icons/political-ballot";
+import { ArrowDown } from "~/componets/Image/Icons/keyboard-arrow-down";
+import { MapsBook } from "~/componets/Image/Icons/maps-book";
+import { StatusFileCheck } from "~/componets/Image/Icons/status-file-check";
+import { TextInput } from "~/componets/TestDemo";
+import { ArrowRight } from "~/componets/Image/Icons/keyboard-arrow-right";
+import { UploadIcon } from "~/componets/Image/Icons/uploadIcon";
+import { CloseIconCircle } from "~/componets/Image/Icons/closeiconCirle";
 
 export default function RegistrationStudant() {
   return (
-    <Coluna className="pl-36">
+    <Coluna className="bg-fundo pl-36 pr-10">
       <Linha className="pt-8">
         <text className="mt-4 text-2xl font-black">Cadastro de aluno</text>
-        <CloseIcon />
+        <div className="pl-56">
+          <CloseIcon />
+        </div>
       </Linha>
+      <Linha className="mt-10">
+        <PolicitalBallot />
+        <h2 className="ml-4 text-lg font-semibold">Dados Pessoais</h2>
+        <div className="ml-3">
+          <ArrowDown />
+        </div>
+        <div className="ml-44">
+          <MapsBook />
+        </div>
+        <div className="ml-5">
+          <StatusFileCheck />
+        </div>
+      </Linha>
+
+      <div className="mt-10">
+        <input id="ManterAtivo" type="checkbox" />
+        <label htmlFor="ManterAtivo" className="ml-2 text-base font-medium">
+          Ativo
+        </label>
+      </div>
+
+      <text className="text-Cor6F7482 mt-7 text-xs">Nome Completo</text>
+      <TextInput placeholder="Text" />
+
+      <text className="text-Cor6F7482 text-xs">Número de Inscrição</text>
+
+      <TextInput placeholder="Text" />
+
       <Linha>
-        <text>Icon Livrinho</text>
-        <text>Dados Pessoais</text>
-        <text>Setinha para Baixo</text>
-        <text>Icon de Outro Livrinho</text>
-        <text>Icon de uma folha ok</text>
+        <Coluna>
+          <text className="text-Cor6F7482 text-xs">Data de Nascimento</text>
+          <TextInput placeholder="Text" />
+        </Coluna>
+
+        <Coluna className="ml-4">
+          <text className="text-Cor6F7482 text-xs">Idade Atual</text>
+          <TextInput placeholder="Text" />
+        </Coluna>
       </Linha>
-      <text>Input de Ativo</text>
-      <text>Input de nome completo</text>
-      <text>Número de Inscrição</text>
+
+      <text className="text-Cor6F7482 text-xs">Endereço Text</text>
+
+      <TextInput placeholder="Text" />
+
       <Linha>
-        <text>Data de Nascimento</text>
-        <text>Idade Atual</text>
+        <Coluna>
+          <text className="text-Cor6F7482 text-xs">Telefone </text>
+
+          <TextInput placeholder="Text" />
+        </Coluna>
+
+        <Coluna className="ml-5">
+          <text className="text-Cor6F7482 text-xs">Telefone de recado </text>
+
+          <TextInput placeholder="Text" />
+        </Coluna>
       </Linha>
-      <text>Endereço Text</text>
-      <Linha>
-        <text>Telefone </text>
-        <text>Telefone de recado </text>
+
+      <text className="text-Cor6F7482 text-xs">E-mail</text>
+
+      <TextInput placeholder="Text" />
+
+      <text className="text-Cor6F7482 text-xs">Nome dos responsáveis</text>
+
+      <TextInput placeholder="Text" />
+
+      <Linha className="border-spacing-3 rounded-md border-2 border-dashed border-azulClaro">
+        <div className="m-1 flex h-14 w-14 items-center justify-center rounded-md bg-azulClaro">
+          <UploadIcon />
+        </div>
+        <Coluna className="ml-4 mt-3">
+          <text className="text-base">Upload de documentos</text>
+          <text className="text-CorA7A7A7 text-xs ">Exemplo: RG.pdf</text>
+        </Coluna>
       </Linha>
-      <text>email</text>
-      <text>Nome dos responsáveis</text>
-      <text>Upload Img</text>
-      <text>aparecer quando fizer Upload</text>
-      <Linha>
-        <text>Livrinho</text>
-        <text>Dados Demográficos</text>
-        <text>Setinha</text>
+      <Linha className="mb-8 mt-3  text-white">
+        <Linha className=" mr-3 h-7  w-24  items-center justify-between rounded  bg-azulClaro">
+          <text className="ml-2">RG.pdf</text>
+          <div className="mr-2">
+            <CloseIconCircle />
+          </div>
+        </Linha>
+
+        <Linha className=" mr-3 h-7  w-24  items-center justify-between rounded bg-azulClaro">
+          <text className="ml-2">RG.pdf</text>
+          <div className="mr-2">
+            <CloseIconCircle />
+          </div>
+        </Linha>
+
+        <Linha className=" mr-3 h-7  w-24  items-center justify-between rounded bg-azulClaro">
+          <text className="ml-2">RG.pdf</text>
+          <div className="mr-2">
+            <CloseIconCircle />
+          </div>
+        </Linha>
       </Linha>
-      <text>icon de uma folinha ok</text>
-      <text>Dados Socieconômicos</text>
-      <text>Setinha</text>
+
+      <Linha className="border-y py-6">
+        <MapsBook />
+
+        <text className="ml-6 text-lg font-semibold ">Dados Demográficos</text>
+        <div className="ml-3">
+          <ArrowRight />
+        </div>
+      </Linha>
+
+      <Linha className="flex border-y py-6 align-middle">
+        <StatusFileCheck />
+        <text className="ml-6 text-lg font-semibold">Dados Socieconômicos</text>
+        <div className="ml-3">
+          <ArrowRight />
+        </div>
+      </Linha>
     </Coluna>
   );
 }

@@ -11,8 +11,11 @@ export const meta: V2_MetaFunction = () => [{ title: "Keep" }];
 export const Linha = ({
   children,
   className = "",
-}: PropsWithChildren<{ className?: string }>) => (
-  <div className={`flex flex-row ${className}`}>{children}</div>
+  ...props
+}: PropsWithChildren<{ className?: string; onClick?: () => void }>) => (
+  <div className={`flex flex-row ${className}`} {...props}>
+    {children}
+  </div>
 );
 
 export const Coluna = ({
@@ -30,7 +33,7 @@ export const TitleContainer = ({
   children,
   className = "",
 }: PropsWithChildren<{ className?: string }>) => (
-  <h2 className={`text-bg mb-4 text-3xl font-bold tracking-tight ${className}`}>
+  <h2 className={`mb-4 text-3xl font-bold tracking-tight text-bg ${className}`}>
     {children}
   </h2>
 );
@@ -60,12 +63,12 @@ export default function Index() {
     <main className="bg-fundo font-primary">
       <Header />
       <Introduction />
-      <Linha className="bg-bg items-center justify-center py-20 text-2xl font-bold">
+      <Linha className="items-center justify-center bg-bg py-20 text-2xl font-bold">
         <h2 className="my-2 justify-center align-middle text-white ">
           Quer saber mais sobre a nossa proposta? <br />
           Entre em contato que contamos tudo pra você {";)"}
         </h2>
-        <a className=" bg-textdemo text-bg ml-12 box-border px-4 py-3 text-base tracking-tight ">
+        <a className=" ml-12 box-border bg-textdemo px-4 py-3 text-base tracking-tight text-bg ">
           Quero saber mais!
         </a>
       </Linha>

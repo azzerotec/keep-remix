@@ -19,14 +19,8 @@ export default function Login() {
               maximus accumsan.
             </p>
           </Coluna>
-          <TextInput
-            placeholder="E-mail"
-            className="-ml-1 flex w-full flex-row"
-          />
-          <TextInput
-            placeholder="Senha"
-            className=" -ml-1 flex w-full flex-row"
-          />
+          <TextInput placeholder="E-mail" className="flex w-full flex-row" />
+          <TextInput placeholder="Senha" className="flex w-full flex-row" />
           <Linha className="justify-between text-xs font-bold">
             <div>
               <input id="manterlogado" type="checkbox" />
@@ -38,7 +32,7 @@ export default function Login() {
           </Linha>
           <Container>
             <Coluna>
-              <button className=" bg-loginbutton mb-5 mt-14 rounded-md px-6 py-4 text-white">
+              <button className=" mb-5 mt-14 rounded-md bg-loginbutton px-6 py-4 text-white">
                 Acessar
               </button>
             </Coluna>
