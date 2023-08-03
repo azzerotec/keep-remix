@@ -7,7 +7,7 @@ export const ArrowRight = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="keyboard_arrow_right" clip-path="url(#clip0_429_718)">
+      <g id="keyboard_arrow_right" clipPath="url(#clip0_429_718)">
         <path
           id="Vector"
           d="M8.61865 16.59L13.1987 12L8.61865 7.41L10.0287 6L16.0287 12L10.0287 18L8.61865 16.59Z"
