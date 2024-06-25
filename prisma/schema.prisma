@@ -36,3 +36,47 @@ model Note {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId String
 }
+
+model Turmaemandamento {
+  id          String @unique
+  nomedaturma String
+
+  professorId String
+  professor   Professor @relation(fields: [professorId], references: [id])
+
+  alunos Aluno[]
+
+  finalizacao DateTime
+
+  categorias     Categoria[]
+  CategoriaTurma CategoriaTurma[]
+}
+
+model Professor {
+  id               String             @id @default(cuid())
+  nome             String
+  Turmaemandamento Turmaemandamento[]
+}
+
+model Aluno {
+  id                 String            @id @default(cuid())
+  nome               String
+  Turmaemandamento   Turmaemandamento? @relation(fields: [turmaemandamentoId], references: [id])
+  turmaemandamentoId String?
+}
+
+model Categoria {
+  id                 String            @id @default(cuid())
+  nome               String
+  Turmaemandamento   Turmaemandamento? @relation(fields: [turmaemandamentoId], references: [id])
+  turmaemandamentoId String?
+  CategoriTurma      CategoriaTurma[]
+}
+
+model CategoriaTurma {
+  id                 String           @id @default(cuid())
+  categoria          Categoria        @relation(fields: [categoriaId], references: [id])
+  turma              Turmaemandamento @relation(fields: [turmaemandamentoId], references: [id])
+  categoriaId        String
+  turmaemandamentoId String
+}

@@ -5,7 +5,8 @@ import type {
     ColumnDef,
     ColumnFiltersState,
     SortingState,
-    VisibilityState} from "@tanstack/react-table";
+    VisibilityState
+} from "@tanstack/react-table";
 import {
     flexRender,
     getCoreRowModel,
@@ -40,7 +41,7 @@ const data: Turmasemandamento[] = [
         id: "m5gr84i9",
         name: "success",
         professor: "ken99@yahoo.com",
-        aluno:"Clebin",
+        aluno: "Clebin",
         andamento: 70,
         finalização: "10/10/2001",
         categoria: "Vilão"
@@ -148,7 +149,7 @@ export const columns: ColumnDef<Turmasemandamento>[] = [
         accessorKey: "andamento",
         header: "Andamento",
         cell: ({ row }) => (
-            <Progress value={ row.getValue("andamento") } />
+            <Progress value={row.getValue("andamento")} />
         ),
     }, {
         accessorKey: "finalização",
