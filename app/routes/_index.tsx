@@ -2,7 +2,7 @@ import type { V2_MetaFunction } from "@remix-run/node";
 import type { PropsWithChildren } from "react";
 import { FooterContent } from "~/componets/Footer";
 import { TestDemo } from "~/componets/TestDemo";
-import { Header } from "~/componets/header";
+import { HeaderLP } from "~/componets/headerLP";
 import { Introduction } from "~/componets/introduction";
 import { MainContent } from "~/componets/maincontent";
 
@@ -58,9 +58,9 @@ export const SubTitle = ({
 export default function Index() {
   return (
     <main className="bg-fundo font-primary">
-      <Header />
-      <Introduction />
-      <Linha className="items-center justify-center bg-bg py-20 text-2xl font-bold">
+      <HeaderLP/>
+        <Introduction />
+        <Linha className="items-center justify-center bg-bg py-20 text-2xl font-bold">
         <h2 className="my-2 justify-center align-middle text-white ">
           Quer saber mais sobre a nossa proposta? <br />
           Entre em contato que contamos tudo pra você {";)"}

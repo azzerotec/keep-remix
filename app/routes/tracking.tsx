@@ -3,7 +3,6 @@ import { CaixaBranca, Coluna, Linha } from "./_index";
 import { Lupinha } from "~/componets/Image/Icons/IcondeBusca";
 import { DownloadIcon } from "~/componets/Image/Icons/icondownload";
 import { ClassCase } from "~/componets/ClassCase";
-import CircleCinza from "~/componets/Image/CircleCinza.jpg";
 import { Statisticsbox } from "~/componets/StatusClass";
 
 export default function Tracking() {
