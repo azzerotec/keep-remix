@@ -38,7 +38,7 @@ model Note {
 }
 
 model Turmaemandamento {
-  id          String @unique
+  id          String @id @default(cuid())
   nomedaturma String
 
   professorId String
@@ -48,8 +48,7 @@ model Turmaemandamento {
 
   finalizacao DateTime
 
-  categorias     Categoria[]
-  CategoriaTurma CategoriaTurma[]
+  categorias Categoria[]
 }
 
 model Professor {
@@ -66,17 +65,7 @@ model Aluno {
 }
 
 model Categoria {
-  id                 String            @id @default(cuid())
-  nome               String
-  Turmaemandamento   Turmaemandamento? @relation(fields: [turmaemandamentoId], references: [id])
-  turmaemandamentoId String?
-  CategoriTurma      CategoriaTurma[]
-}
-
-model CategoriaTurma {
-  id                 String           @id @default(cuid())
-  categoria          Categoria        @relation(fields: [categoriaId], references: [id])
-  turma              Turmaemandamento @relation(fields: [turmaemandamentoId], references: [id])
-  categoriaId        String
-  turmaemandamentoId String
+  id     String             @id @default(cuid())
+  nome   String
+  turmas Turmaemandamento[]
 }

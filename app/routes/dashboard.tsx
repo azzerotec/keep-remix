@@ -1,4 +1,6 @@
 
+import { json } from "@remix-run/node"
+import { useLoaderData } from "@remix-run/react"
 import {
   CircleUser,
 } from "lucide-react"
@@ -21,11 +23,27 @@ import { DataTable } from "~/componets/DataTable"
 import { Logo } from "~/componets/Image/logo"
 import { Statisticsbox } from "~/componets/StatusClass"
 import { Header } from "~/componets/header"
+import { prisma } from "~/db.server"
+
+export const loader = async () => {
+  const Turmas = await prisma.turmaemandamento.findMany(
+    {
+      include: {
+        professor: true,
+        categorias: true,
+        alunos: true
+      }
+    }
+  )
+  return json(Turmas)
+}
 
 export default function Dashboard() {
+  const turmaemandamento = useLoaderData()
+  console.log(turmaemandamento)
   return (
-   <div className="flex min-h-screen w-full flex-col">
-      <Header/>
+    <div className="flex min-h-screen w-full flex-col">
+      <Header />
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
         <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-5">
           <Statisticsbox Statusnumber={"32"} Statusname={"Estudantes"} />
@@ -35,7 +53,7 @@ export default function Dashboard() {
           <Statisticsbox Statusnumber={"56"} Statusname={"Instrumentos"} />
         </div>
         <div className="">
-            <Card x-chunk="dashboard-06-chunk-0">
+          <Card x-chunk="dashboard-06-chunk-0">
             <Tabs defaultValue="account" className="w-[400px]">
               <TabsList>
                 <TabsTrigger value="Turmas em Andamento">Turmas em Andamento</TabsTrigger>
@@ -46,11 +64,11 @@ export default function Dashboard() {
               <TabsContent value="password"></TabsContent>
             </Tabs>
 
-            <DataTable />
-            </Card>
+            <DataTable list={turmaemandamento} />
+          </Card>
         </div>
       </main>
-    </div> 
+    </div>
 
   )
 }

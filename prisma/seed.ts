@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
+import { BrushIcon } from "lucide-react";
 
 const prisma = new PrismaClient();
 
@@ -40,8 +41,49 @@ async function seed() {
     },
   });
 
+  const guittarCategory = await prisma.categoria.create({
+    data: {
+      nome: "Violão"
+    }
+  })
+
+  const drumsCategory = await prisma.categoria.create({
+    data: {
+      nome: "Bateria"
+    }
+  })
+
+  const mauro = await prisma.aluno.create({
+    data: {
+      nome: "Mauro"
+    }
+  })
+
+  const bruno = await prisma.professor.create({
+    data: {
+      nome: "Bruno"
+    }
+  })
+
+  await prisma.turmaemandamento.create({
+    data: {
+      nomedaturma: "Bruno",
+      alunos: { connect: [{ id: mauro.id }] },
+      professor: { connect: { id: bruno.id } },
+      finalizacao: new Date(),
+      categorias: {
+        connect: [
+          { id: drumsCategory.id },
+          { id: guittarCategory.id },
+        ]
+      }
+    }
+  })
+
   console.log(`Database has been seeded. 🌱`);
 }
+
+
 
 seed()
   .catch((e) => {

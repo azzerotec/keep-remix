@@ -35,60 +35,13 @@ import {
     TableRow,
 } from "~/components/ui/table"
 import { Progress } from "~/components/ui/progress";
-
-const data: Turmasemandamento[] = [
-    {
-        id: "m5gr84i9",
-        name: "success",
-        professor: "ken99@yahoo.com",
-        aluno: "Clebin",
-        andamento: 70,
-        finalização: "10/10/2001",
-        categoria: "Vilão"
-    },
-    {
-        id: "3u1reuv4",
-        name: "success",
-        professor: "Abe45@gmail.com",
-        aluno: "Rogerin",
-        andamento: 90,
-        finalização: "10/10/2001",
-        categoria: "Vilão"
-    },
-    {
-        id: "derv1ws0",
-        name: "processing",
-        professor: "Monserrat44@gmail.com",
-        aluno: "Markin",
-        andamento: 30,
-        finalização: "10/10/2001",
-        categoria: "Vilão"
-    },
-    {
-        id: "5kma53ae",
-        name: "success",
-        professor: "Silas22@gmail.com",
-        aluno: "brenin",
-        andamento: 90,
-        finalização: "10/10/2001",
-        categoria: "Vilão"
-    },
-    {
-        id: "bhqecj4p",
-        name: "failed",
-        professor: "carmella@hotmail.com",
-        aluno: "Maurin",
-        andamento: 40,
-        finalização: "10/10/2001",
-        categoria: "Vilão"
-    },
-]
+import { Avatar } from "~/components/ui/avatar";
 
 export type Turmasemandamento = {
     id: string
     name: string
     professor: string
-    aluno: string
+    aluno: { nome: string }[]
     andamento: number
     finalização: string
     categoria: string
@@ -143,7 +96,11 @@ export const columns: ColumnDef<Turmasemandamento>[] = [
         accessorKey: "aluno",
         header: "Alunos",
         cell: ({ row }) => (
-            <div className="capitalize">{row.getValue("aluno")}</div>
+            < div className="capitalize" > {
+                row.getValue("aluno").map(() => {
+                    return <Avatar />
+                })
+            }</div>
         ),
     }, {
         accessorKey: "andamento",
@@ -166,7 +123,7 @@ export const columns: ColumnDef<Turmasemandamento>[] = [
     },
 ]
 
-export function DataTable() {
+export function DataTable({ list }: { list: any[] }) {
     const [sorting, setSorting] = React.useState<SortingState>([])
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
         []
@@ -176,7 +133,7 @@ export function DataTable() {
     const [rowSelection, setRowSelection] = React.useState({})
 
     const table = useReactTable({
-        data,
+        data: list,
         columns,
         onSortingChange: setSorting,
         onColumnFiltersChange: setColumnFilters,
