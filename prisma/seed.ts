@@ -40,8 +40,61 @@ async function seed() {
     },
   });
 
+  const guittarCategory = await prisma.categoria.create({
+    data: {
+      nome: "Violão"
+    }
+  })
+
+  const drumsCategory = await prisma.categoria.create({
+    data: {
+      nome: "Bateria"
+    }
+  })
+
+  await prisma.aluno.deleteMany();
+  const mauro = await prisma.aluno.create({
+    data: {
+      nome: "Mauro",
+      finalizacao: new Date(),
+      localderesidencia: "Brasil",
+      status: "Em andamento"
+    }
+  })
+
+  await prisma.turmaemandamento.deleteMany();
+  await prisma.professor.deleteMany();
+
+  const bruno = await prisma.professor.create({
+    data: {
+      nome: "Bruno",
+      localderesidencia: "Brasil",
+      especilidade: "Guitarra",
+      finalizacao: new Date(),
+      status: "Em andamento"
+
+    }
+  })
+
+  await prisma.turmaemandamento.create({
+    data: {
+      nomedaturma: "Bruno",
+      alunos: { connect: [{ id: mauro.id }] },
+      professor: { connect: { id: bruno.id } },
+      finalizacao: new Date(),
+      categorias: {
+        connect: [
+          { id: drumsCategory.id },
+          { id: guittarCategory.id },
+        ]
+      }
+    }
+  })
+
   console.log(`Database has been seeded. 🌱`);
 }
+
+
 
 seed()
   .catch((e) => {
