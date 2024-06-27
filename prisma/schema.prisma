@@ -42,7 +42,7 @@ model Turmaemandamento {
   nomedaturma String
 
   professorId String
-  professor   Professor @relation(fields: [professorId], references: [id])
+  professor   Professor @relation(fields: [professorId], references: [id], onDelete: NoAction)
 
   alunos Aluno[]
 
@@ -52,14 +52,23 @@ model Turmaemandamento {
 }
 
 model Professor {
-  id               String             @id @default(cuid())
-  nome             String
+  id                String   @id @default(cuid())
+  nome              String
+  localderesidencia String
+  finalizacao       DateTime
+  especilidade      String
+  status            String
+
   Turmaemandamento Turmaemandamento[]
 }
 
 model Aluno {
-  id                 String            @id @default(cuid())
-  nome               String
+  id                String   @id @default(cuid())
+  nome              String
+  localderesidencia String
+  finalizacao       DateTime
+  status            String
+
   Turmaemandamento   Turmaemandamento? @relation(fields: [turmaemandamentoId], references: [id])
   turmaemandamentoId String?
 }

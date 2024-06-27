@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
-import { BrushIcon } from "lucide-react";
 
 const prisma = new PrismaClient();
 
@@ -53,15 +52,27 @@ async function seed() {
     }
   })
 
+  await prisma.aluno.deleteMany();
   const mauro = await prisma.aluno.create({
     data: {
-      nome: "Mauro"
+      nome: "Mauro",
+      finalizacao: new Date(),
+      localderesidencia: "Brasil",
+      status: "Em andamento"
     }
   })
 
+  await prisma.turmaemandamento.deleteMany();
+  await prisma.professor.deleteMany();
+
   const bruno = await prisma.professor.create({
     data: {
-      nome: "Bruno"
+      nome: "Bruno",
+      localderesidencia: "Brasil",
+      especilidade: "Guitarra",
+      finalizacao: new Date(),
+      status: "Em andamento"
+
     }
   })
 

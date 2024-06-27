@@ -1,196 +1,21 @@
 
 import { json } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
-import type { ColumnDef } from "@tanstack/react-table"
-import {
-  ArrowUpDown,
-} from "lucide-react"
 import { DataTable } from "~/components/data-table/data-table"
-
-import { Button } from "~/components/ui/button"
 import {
   Card,
 } from "~/components/ui/card"
-import { Checkbox } from "~/components/ui/checkbox"
-import { Progress } from "~/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs"
-
 import { Statisticsbox } from "~/componets/StatusClass"
 import { Header } from "~/componets/header"
+import { studentColumns } from "~/data/alunocolumns"
+import { teachercolumns } from "~/data/teachercolumns"
+import { turmaColumns } from "~/data/turmacolumns"
 import { prisma } from "~/db.server"
 
-const columns: ColumnDef<{
-  id: string
-  name: string
-  professor: string
-  aluno: string[],
-  andamento: number
-  finalização: string
-  categoria: string
-}>[] = [
-    {
-      id: "select",
-      header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          onCheckedChange={(value: any) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
-        />
-      ),
-      cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value: any) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
-      ),
-      enableSorting: false,
-      enableHiding: false,
-    },
-    {
-      accessorKey: "name",
-      header: "Nome da turma",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("name")}</div>
-      ),
-    },
-    {
-      accessorKey: "professor",
-      header: ({ column }) => {
-        return (
-          <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          >
-            Professor
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          </Button>
-        )
-      },
-      cell: ({ row }) => <div className="lowercase">{row.getValue("professor")}</div>,
-    },
-    {
-      accessorKey: "aluno",
-      header: "Alunos",
-      cell: ({ row }) => (
-        < div className="capitalize" > {
-          row.getValue("aluno")
-        }</div>
-      ),
-    },
-    {
-      accessorKey: "andamento",
-      header: "Andamento",
-      cell: ({ row }) => (
-        <Progress value={row.getValue("andamento")} />
-      ),
-    },
-    {
-      accessorKey: "finalização",
-      header: "Finalização",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("finalização")}</div>
-      ),
-    },
-    {
-      accessorKey: "categoria",
-      header: "Categoria",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("categoria")}</div>
-      ),
-    },
-  ]
-
-const studentColumns: ColumnDef<{
-  id: string
-  name: string
-  professor: string
-  aluno: string[],
-  andamento: number
-  finalização: string
-  categoria: string
-}>[] = [
-    {
-      id: "select",
-      header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          onCheckedChange={(value: any) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
-        />
-      ),
-      cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value: any) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
-      ),
-      enableSorting: false,
-      enableHiding: false,
-    },
-    {
-      accessorKey: "name",
-      header: "Nome da turma",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("name")}</div>
-      ),
-    },
-    {
-      accessorKey: "professor",
-      header: ({ column }) => {
-        return (
-          <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          >
-            Professor
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          </Button>
-        )
-      },
-      cell: ({ row }) => <div className="lowercase">{row.getValue("professor")}</div>,
-    },
-    {
-      accessorKey: "aluno",
-      header: "Alunos",
-      cell: ({ row }) => (
-        < div className="capitalize" > {
-          row.getValue("aluno")
-        }</div>
-      ),
-    },
-    {
-      accessorKey: "andamento",
-      header: "Andamento",
-      cell: ({ row }) => (
-        <Progress value={row.getValue("andamento")} />
-      ),
-    },
-    {
-      accessorKey: "finalização",
-      header: "Finalização",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("finalização")}</div>
-      ),
-    },
-    {
-      accessorKey: "categoria",
-      header: "Categoria",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("categoria")}</div>
-      ),
-    },
-  ]
 
 export const loader = async () => {
-  const Turmas = await prisma.turmaemandamento.findMany(
+  const turmas = await prisma.turmaemandamento.findMany(
     {
       include: {
         professor: true,
@@ -199,13 +24,24 @@ export const loader = async () => {
       }
     }
   )
-  return json(Turmas)
+
+  const alunos = await prisma.aluno.findMany(
+    {
+      include: {
+        Turmaemandamento: true,
+
+      }
+    }
+  )
+  const professor = await prisma.professor.findMany()
+
+  return json({ turmas, alunos, professor })
 }
 
 export default function Dashboard() {
-  const turmaemandamento = useLoaderData<typeof loader>()
+  const { turmas, alunos, professor } = useLoaderData<typeof loader>()
 
-  const turmaTransformada = turmaemandamento.map(turma => ({
+  const turmaTransformada = turmas.map(turma => ({
     id: turma.id,
     name: turma.nomedaturma,
     professor: turma.professor.nome,
@@ -214,6 +50,30 @@ export default function Dashboard() {
     finalização: turma.finalizacao,
     categoria: turma.categorias.map(categoria => categoria.nome).join(", ")
   }))
+
+  const alunosTraduzidos = alunos.map(
+    (aluno) => {
+      return {
+        id: aluno.id,
+        name: aluno.nome,
+        nomedaturma: aluno.Turmaemandamento?.nomedaturma,
+        status: aluno.status,
+        localderesidencia: aluno.localderesidencia ? aluno.localderesidencia : "",
+        finalização: aluno.finalizacao
+      };
+    })
+
+  const professorTraduzidos = professor.map((professor) => {
+    return {
+      id: professor.id,
+      nome: professor.nome,
+      especilidade: professor.especilidade,
+      localderesidencia: professor.localderesidencia,
+      status: professor.status,
+      finalização: professor.finalizacao
+    }
+  }
+  )
 
   return (
     <div className="flex min-h-screen w-full flex-col">
@@ -235,12 +95,16 @@ export default function Dashboard() {
                 <TabsTrigger value="Professores">Professores</TabsTrigger>
               </TabsList>
               <TabsContent value="Turmas em Andamento">
-                <DataTable data={turmaTransformada} columns={columns} />
+                <DataTable data={turmaTransformada} columns={turmaColumns} />
               </TabsContent>
               <TabsContent value="Alunos" className="w-full">
-                <DataTable data={[]} columns={studentColumns} />
+                <DataTable data={alunosTraduzidos} columns={studentColumns} />
               </TabsContent>
-              <TabsContent value="Professores"></TabsContent>
+              <TabsContent value="Professores">
+                <DataTable data={professorTraduzidos} columns={teachercolumns} />
+              </TabsContent>
+
+
             </Tabs>
           </Card>
         </div>
