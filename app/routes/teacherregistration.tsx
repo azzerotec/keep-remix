@@ -11,7 +11,7 @@ import { CloseIconCircle } from "~/componets/Image/Icons/closeiconCirle";
 
 export default function RegistrationTeacher() {
   return (
-    <Coluna className="bg-fundo pl-36 pr-10">
+    <Coluna className="bg-fundo  max-w-2xl">
       <Linha className="pt-8">
         <text className="mt-4 text-2xl font-black">Cadastro de Professor</text>
         <div className="pl-56">
@@ -28,7 +28,7 @@ export default function RegistrationTeacher() {
       </Linha>
 
       <div className="mt-10">
-        <input id="ManterAtivo" type="checkbox" />
+        <input id="ManterAtivo" type="checkbox" alt="" />
         <label htmlFor="ManterAtivo" className="ml-2 text-base font-medium">
           Ativo
         </label>

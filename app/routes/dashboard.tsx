@@ -2,6 +2,7 @@
 import { json } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 import { DataTable } from "~/components/data-table/data-table"
+import { Sheetright } from "~/components/extended/rightsheet"
 import {
   Card,
 } from "~/components/ui/card"
@@ -93,6 +94,7 @@ export default function Dashboard() {
                 <TabsTrigger value="Turmas em Andamento">Turmas em Andamento</TabsTrigger>
                 <TabsTrigger value="Alunos">Alunos</TabsTrigger>
                 <TabsTrigger value="Professores">Professores</TabsTrigger>
+                <Sheetright />
               </TabsList>
               <TabsContent value="Turmas em Andamento">
                 <DataTable data={turmaTransformada} columns={turmaColumns} />
@@ -103,8 +105,6 @@ export default function Dashboard() {
               <TabsContent value="Professores">
                 <DataTable data={professorTraduzidos} columns={teachercolumns} />
               </TabsContent>
-
-
             </Tabs>
           </Card>
         </div>
